@@ -1,0 +1,46 @@
+{
+  "generator-jhipster": {
+    "applicationType": "microservice",
+    "gitCompany": "",
+    "baseName": "AWSsaLaunch",
+    "packageName": "aws.salaunnch.demo",
+    "packageFolder": "aws/salaunnch/demo",
+    "serverPort": 8081,
+    "serviceDiscoveryType": "eureka",
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "gradle",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "gatling"
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "es",
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "6.1.2",
+    "jwtSecretKey": "NGQ4YmNlZDcwN2NkMWIxZjA3YzJmZDVlZDY5ODY2NThkMzQ2MWU4OGVmOTkyZmQwNTJjYzdlNzkzZmU0NzdiZjdlZTZjOTkzMDJhZDU4YjViNzU0YTE0ZWVlYWM4NzE3YWRiYjM0YWQwZjU0YmYwMzJlMmEzMDZjOTI0NWIzNzk=",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  },
+  "git-provider": "GitHub",
+  "git-company": "renemartinezb86",
+  "repository-name": "aws-salaunch-demo"
+}

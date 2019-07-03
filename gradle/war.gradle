@@ -1,0 +1,12 @@
+apply plugin: "war"
+
+bootWar {
+    mainClassName = "aws.salaunnch.demo.AwSsaLaunchApp"
+    includes = ["WEB-INF/**", "META-INF/**"]
+}
+
+war {
+    enabled = true
+    archiveExtension = "war.original"
+    includes = ["WEB-INF/**", "META-INF/**"]
+}

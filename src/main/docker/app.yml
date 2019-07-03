@@ -1,0 +1,29 @@
+version: '2'
+services:
+  awssalaunch-app:
+    image: awssalaunch
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,swagger
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
+      - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+      - SPRING_DATASOURCE_URL=jdbc:mysql://awssalaunch-mysql:3306/awssalaunch?useUnicode=true&characterEncoding=utf8&useSSL=false
+      - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
+      - SPRING_DATA_JEST_URI=http://awssalaunch-elasticsearch:9200
+      - SPRING_ELASTICSEARCH_REST_URIS=http://awssalaunch-elasticsearch:9200
+  awssalaunch-mysql:
+    extends:
+      file: mysql.yml
+      service: awssalaunch-mysql
+  awssalaunch-elasticsearch:
+    extends:
+      file: elasticsearch.yml
+      service: awssalaunch-elasticsearch
+  jhipster-registry:
+    extends:
+      file: jhipster-registry.yml
+      service: jhipster-registry
+    environment:
+      - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_TYPE=native
+      - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_SEARCH_LOCATIONS=file:./central-config/docker-config/
