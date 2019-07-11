@@ -1,0 +1,79 @@
+entity Region {
+	regionName String
+}
+
+entity Continent {
+	continentName String
+}
+
+entity Location {
+	seaQuadrant String,
+	friendlys String,
+	hostiles String,
+	status String
+}
+
+entity Ship {
+	shipName String required
+}
+
+entity Task {
+	title String,
+	description String
+}
+
+entity Marine {
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant,
+	rank Long
+}
+
+entity Job {
+	jobTitle String,
+	specialty String,
+	priority Long
+}
+
+entity ShipLog {
+	datetime Instant,
+	entrytext String,
+    entrytype EntryType
+}
+
+enum EntryType {
+    COMMAND, COMMUNICATION, TASK
+}
+
+relationship OneToOne {
+	Continent{region} to Region
+}
+
+relationship OneToOne {
+	Location{continent} to Continent
+}
+
+relationship OneToOne {
+	Ship{location} to Location
+}
+
+relationship ManyToMany {
+	Job{task(title)} to Task{job}
+}
+
+relationship OneToMany {
+	Marine{job} to Job,
+	Ship{marine} to Marine
+}
+
+relationship OneToOne {
+	ShipLog{ship} to Ship,
+	ShipLog{marine} to Marine
+}
+
+paginate ShipLog, Marine with infinite-scroll
+paginate Job with pagination
+
+service all with serviceImpl except Marine, Job
