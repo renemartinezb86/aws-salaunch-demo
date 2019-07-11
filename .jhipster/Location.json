@@ -1,0 +1,41 @@
+{
+    "name": "Location",
+    "fields": [
+        {
+            "fieldName": "seaQuadrant",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "friendlys",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hostiles",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "continent",
+            "otherEntityRelationshipName": "location",
+            "relationshipName": "continent",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190711134409",
+    "entityTableName": "location",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "AWSsaLaunch",
+    "applications": "*",
+    "microserviceName": "AWSsaLaunch"
+}
