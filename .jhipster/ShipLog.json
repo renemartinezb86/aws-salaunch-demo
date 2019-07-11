@@ -1,0 +1,46 @@
+{
+    "name": "ShipLog",
+    "fields": [
+        {
+            "fieldName": "datetime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "entrytext",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "entrytype",
+            "fieldType": "EntryType",
+            "fieldValues": "COMMAND,COMMUNICATION,TASK"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "ship",
+            "otherEntityRelationshipName": "shipLog",
+            "relationshipName": "ship",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "marine",
+            "otherEntityRelationshipName": "shipLog",
+            "relationshipName": "marine",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190711134414",
+    "entityTableName": "ship_log",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "AWSsaLaunch",
+    "applications": "*",
+    "microserviceName": "AWSsaLaunch"
+}

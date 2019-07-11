@@ -1,0 +1,29 @@
+{
+    "name": "Continent",
+    "fields": [
+        {
+            "fieldName": "continentName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "region",
+            "otherEntityRelationshipName": "continent",
+            "relationshipName": "region",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190711134408",
+    "entityTableName": "continent",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "AWSsaLaunch",
+    "applications": "*",
+    "microserviceName": "AWSsaLaunch"
+}

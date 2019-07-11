@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ShipLog.
+    -->
+    <changeSet id="20190711134414-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="ship_id"
+                                 baseTableName="ship_log"
+                                 constraintName="fk_ship_log_ship_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ship"/>
+
+        <addForeignKeyConstraint baseColumnNames="marine_id"
+                                 baseTableName="ship_log"
+                                 constraintName="fk_ship_log_marine_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="marine"/>
+
+    </changeSet>
+</databaseChangeLog>

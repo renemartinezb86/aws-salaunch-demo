@@ -1,0 +1,38 @@
+{
+    "name": "Ship",
+    "fields": [
+        {
+            "fieldName": "shipName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "location",
+            "otherEntityRelationshipName": "ship",
+            "relationshipName": "location",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "marine",
+            "otherEntityRelationshipName": "ship",
+            "relationshipName": "marine"
+        }
+    ],
+    "changelogDate": "20190711134410",
+    "entityTableName": "ship",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "AWSsaLaunch",
+    "applications": "*",
+    "microserviceName": "AWSsaLaunch"
+}
